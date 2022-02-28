@@ -10,7 +10,8 @@ const app = Vue.createApp({
                 { id: "bronzeTicket", name: "Bronze", image: "http://www.fillmurray.com/198/198", tickets: 3, descriptions: "This is a bronze level fun ticket" },
                 { id: "silverTicket", name: "Silver", image: "http://www.fillmurray.com/202/202", tickets: 10, descriptions: "This is some silver level fun" },
                 { id: "goldTicket", name: "Gold", image: "http://www.fillmurray.com/203/203", tickets: 40, descriptions: "Go all in - this is teh gold level!" },
-            ]
+            ],
+            hidden: false,
         }
     },
     methods: {

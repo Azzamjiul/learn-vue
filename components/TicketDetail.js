@@ -28,8 +28,9 @@ app.component("ticket-detail", {
     },
     methods: {
         addTicket(num) {
-            this.ticketsLeft -= num
-            this.ticketsToBuy = 0
+            this.ticketsLeft -= num;
+            this.$emit('buyTickets', this.ticketsToBuy, this.name);
+            this.ticketsToBuy = 0;
         }
     },
 });

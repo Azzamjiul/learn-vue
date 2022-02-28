@@ -22,6 +22,10 @@ const app = Vue.createApp({
         },
         updateImage(id) {
             this.image = this.ticketTypes.filter(type => type.id === id)[0].image
+        },
+        buyTickets(numberOfTickets, nameOfTicket) {
+            console.log(`Buy ${numberOfTickets} ${nameOfTicket} ticket`)
+            this.cart += numberOfTickets
         }
     },
     computed: {

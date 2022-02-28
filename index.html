@@ -37,7 +37,10 @@
                     </ul>
                 </div>
                 <div class="col-md-6">
-                    <img :class="{'opacity-50': soldOut, 'visually-hidden': hidden}" :src="image" />
+                    <img 
+                        :class="[ {'opacity-50': soldOut}, {'visualy-hiden': hidden}]" 
+                        :src="image" 
+                    />
                 </div>
             </div>
 

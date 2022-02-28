@@ -43,19 +43,25 @@
 
             <div class="row mt-4">
                 <div 
-                    class="col-md-3" 
+                    class="col-md-4" 
                     v-for="type in ticketTypes"
                     @mouseover="updateImage(type.id)"
                 >
                     <div class="card">
-                        <!-- <img :src="type.image" class="card-img-top" alt="..."> -->
                         <div class="card-body">
                             <h5 class="card-title">{{type.name}}</h5>
-                            <p class="card-text">{{type.description}}</p>
-                            <a href="#" class="btn btn-primary">Buy {{type.name}}</a>
+                            <p class="card-text">{{type.descriptions}}</p>
                         </div>
                     </div>
                 </div>
+            </div>
+            
+            <div class="row mt-5">
+                <button 
+                    class="btn btn-primary"
+                    @click="updateCart(1)"
+                    v-if="!soldOut"
+                >Buy Ticket</button>
             </div>
         </div>
     </div>

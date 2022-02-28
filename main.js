@@ -7,9 +7,9 @@ const app = Vue.createApp({
             details: ["Funny comics", "Mime artistry", "Satire", "Sketches"],
             cart: 0,
             ticketTypes : [
-                { id: "bronzeTicket", name: "Bronze", image: "http://www.fillmurray.com/198/198", tickets: 3, descriptions: "This is a bronze level fun" },
+                { id: "bronzeTicket", name: "Bronze", image: "http://www.fillmurray.com/198/198", tickets: 3, descriptions: "This is a bronze level fun ticket" },
                 { id: "silverTicket", name: "Silver", image: "http://www.fillmurray.com/202/202", tickets: 10, descriptions: "This is some silver level fun" },
-                { id: "goldTicket", name: "Gold", image: "http://www.fillmurray.com/199/199", tickets: 40, descriptions: "Go all in - this is teh gold level!" },
+                { id: "goldTicket", name: "Gold", image: "http://www.fillmurray.com/203/203", tickets: 40, descriptions: "Go all in - this is teh gold level!" },
             ]
         }
     },
@@ -22,4 +22,9 @@ const app = Vue.createApp({
             this.image = this.ticketTypes.filter(type => type.id === id)[0].image
         }
     },
+    computed: {
+        soldOut() {
+            return this.tickets === 0;
+        }
+    }
 })

@@ -11,22 +11,30 @@
 </head>
 
 <body>
-    <div class="top-bar">
-        <h1 class="site-title">Online Events</h1>
-    </div>
     <div id="app">
+        <nav class="navbar navbar-dark bg-dark px-3 mb-4">
+            <a class="navbar-brand" href="#">Online Events</a>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Tickets ({{cart}})</a>
+                </li>
+            </ul>
+        </nav>
         <div class="container">
-            <div class="left">
-                <h1 class="site-title">{{ title.toUpperCase() }}</h1>
-                <p v-if="tickets > 10">There are  {{tickets}} left.</p>
-                <p v-else-if="tickets <= 10 && tickets > 0">Tickets are running low</p>
-                <p v-else>There are no tickets.</p>
-                <ul>
-                    <li v-for="(value, key) of details" :key="detail" >{{key}} - {{value}}</li>
-                </ul>
-            </div>
-            <div class="right">
-                <img :src="image" />
+            <div class="row">
+                <div class="col-md-6">
+                    <h1 class="site-title">{{ title.toUpperCase() }}</h1>
+                    <p v-if="tickets > 10">There are  {{tickets}} left.</p>
+                    <p v-else-if="tickets <= 10 && tickets > 0">Tickets are running low</p>
+                    <p v-else>There are no tickets.</p>
+                    <ul>
+                        <li v-for="(value, key) of details" :key="detail" >{{key}} - {{value}}</li>
+                    </ul>
+                    <button class="btn btn-primary" @click="cart++">Add Ticket</button>
+                </div>
+                <div class="col-md-6">
+                    <img :src="image" />
+                </div>
             </div>
         </div>
     </div>

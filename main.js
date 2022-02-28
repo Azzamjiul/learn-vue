@@ -5,6 +5,7 @@ const app = Vue.createApp({
             tickets: 0,
             image: "http://www.fillmurray.com/200/200",
             details: ["Funny comics", "Mime artistry", "Satire", "Sketches"],
+            cart: 0,
         }
     }
 })

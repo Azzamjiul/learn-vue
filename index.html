@@ -21,6 +21,9 @@
                 <p v-if="tickets > 10">There are  {{tickets}} left.</p>
                 <p v-else-if="tickets <= 10 && tickets > 0">Tickets are running low</p>
                 <p v-else>There are no tickets.</p>
+                <ul>
+                    <li v-for="(value, key) of details" :key="detail" >{{key}} - {{value}}</li>
+                </ul>
             </div>
             <div class="right">
                 <img :src="image" />

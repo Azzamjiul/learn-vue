@@ -3,7 +3,8 @@ const app = Vue.createApp({
         return {
             title: "Comedy Events",
             tickets: 0,
-            image: "http://www.fillmurray.com/200/200"
+            image: "http://www.fillmurray.com/200/200",
+            details: ["Funny comics", "Mime artistry", "Satire", "Sketches"],
         }
     }
 })

@@ -12,6 +12,7 @@ const app = Vue.createApp({
                 { id: "goldTicket", name: "Gold", image: "http://www.fillmurray.com/203/203", tickets: 40, descriptions: "Go all in - this is teh gold level!" },
             ],
             hidden: false,
+            message: '',
         }
     },
     methods: {

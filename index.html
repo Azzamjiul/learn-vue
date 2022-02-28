@@ -45,18 +45,12 @@
             </div>
 
             <div class="row mt-4">
-                <div 
-                    class="col-md-4" 
+                <ticket-details
                     v-for="type in ticketTypes"
-                    @mouseover="updateImage(type.id)"
-                >
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">{{type.name}}</h5>
-                            <p class="card-text">{{type.descriptions}}</p>
-                        </div>
-                    </div>
-                </div>
+                    :name="type.name"
+                    :description="type.description"
+                    :tickets="type.tickets"
+                />
             </div>
             
             <div class="row mt-5">
@@ -78,6 +72,7 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
     <script src="./main.js"></script>
+    <script src="components/TicketDetail.js"></script>
     <script>
         const mountedApp = app.mount("#app");
     </script>

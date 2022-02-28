@@ -7,9 +7,9 @@ const app = Vue.createApp({
             details: ["Funny comics", "Mime artistry", "Satire", "Sketches"],
             cart: 0,
             ticketTypes : [
-                { id: "bronzeTicket", name: "Bronze", image: "http://www.fillmurray.com/198/198", tickets: 3, descriptions: "This is a bronze level fun ticket" },
-                { id: "silverTicket", name: "Silver", image: "http://www.fillmurray.com/202/202", tickets: 10, descriptions: "This is some silver level fun" },
-                { id: "goldTicket", name: "Gold", image: "http://www.fillmurray.com/203/203", tickets: 40, descriptions: "Go all in - this is teh gold level!" },
+                { id: "bronzeTicket", name: "Bronze", image: "http://www.fillmurray.com/198/198", tickets: 3, description: "This is a bronze level fun ticket" },
+                { id: "silverTicket", name: "Silver", image: "http://www.fillmurray.com/202/202", tickets: 10, description: "This is some silver level fun" },
+                { id: "goldTicket", name: "Gold", image: "http://www.fillmurray.com/203/203", tickets: 20, description: "Go all in - this is the gold level!" },
             ],
             hidden: false,
             message: '',

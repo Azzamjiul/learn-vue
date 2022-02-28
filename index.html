@@ -31,20 +31,30 @@
                     </p>
                     <p v-else>There are no tickets.</p>
                     <ul>
-                        <li v-for="(value, key) of details" :key="detail">
+                        <li v-for="(value, key) of details" :key="key">
                             {{key}} - {{value}}
                         </li>
                     </ul>
-                    <button class="btn btn-primary mb-3" v-if="tickets > 0" @click="updateCart()">
-                        Add Ticket
-                    </button>
-                    <br />
-                    <button class="btn btn-primary mb-3" v-if="tickets > 0" @click="updateCart(2)">
-                        Add 2 Tickets
-                    </button>
                 </div>
                 <div class="col-md-6">
                     <img :src="image" />
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div 
+                    class="col-md-3" 
+                    v-for="type in ticketTypes"
+                    @mouseover="updateImage(type.id)"
+                >
+                    <div class="card">
+                        <!-- <img :src="type.image" class="card-img-top" alt="..."> -->
+                        <div class="card-body">
+                            <h5 class="card-title">{{type.name}}</h5>
+                            <p class="card-text">{{type.description}}</p>
+                            <a href="#" class="btn btn-primary">Buy {{type.name}}</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

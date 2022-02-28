@@ -6,14 +6,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Event</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://unpkg.com/vue@3.0.5/dist/vue.global.js"></script>
 </head>
 
 <body>
-    <div id="app">
-        {{ message }}
+    <div class="top-bar">
+        <h1 class="site-title">Online Events</h1>
     </div>
-    <script src="https://unpkg.com/vue@3"></script>
+    <div id="app">
+        <div class="container">
+            <div class="left">
+                <h1 class="site-title">{{ title.toUpperCase() }}</h1>
+                <p>There are  {{tickets === 0 ? "no" : tickets}} left.</p>
+            </div>
+            <div class="right">
+                <img :src="image" />
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="./main.js"></script>
+    <script>
+        const mountedApp = app.mount("#app")
+    </script>
 </body>
 
 </html>

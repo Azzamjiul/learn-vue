@@ -1,5 +1,5 @@
-app.component("ticket-details", {
-    props : {
+app.component("ticket-detail", {
+    props: {
         name: String,
         description: String,
         tickets: Number
@@ -12,15 +12,24 @@ app.component("ticket-details", {
                 <p class="card-text">{{description}}</p>
                 <select class="form-control" v-model="ticketsToBuy">
                     <option value=0 >0</option>
-                    <option v-for="number in tickets" :value="number">{{number}}</option>
+                    <option v-for="number in ticketsLeft" :value="number">{{number}}</option>
                 </select>
+
+                <button class="btn btn-success mt-3" v-if="ticketsToBuy > 0" @click=addTicket(ticketsToBuy) >Buy Tickets</button>
             </div>
         </div>
     </div>
     `,
     data() {
         return {
-            ticketsToBuy: 0
+            ticketsToBuy: 0,
+            ticketsLeft: this.tickets
         }
-    }
+    },
+    methods: {
+        addTicket(num) {
+            this.ticketsLeft -= num
+            this.ticketsToBuy = 0
+        }
+    },
 });
